@@ -1,13 +1,84 @@
-body {
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+html,body{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+}
+html{
+  background-color: #21232A;
+  overflow-y: scroll;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav{
+  width: 100%;
+  display: flex;
+  font-size: 15px;
+  color: white;
+  padding: 20px;
+  justify-content: space-evenly;
+  height: 80px;
+}
+nav a{
+  cursor: pointer;
+  margin-top: 30px;
+}
+nav a:hover{
+  color: #15869E;
+  font-size: 16px;
+}
+nav a:focus{
+  color: #15869E;
+}
+
+.content{
+  margin-top: 5px;
+  display: flex;
+  height: 640px;
+  background-color: #55505048;
+  width: 90%;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.options{
+  margin-top: 30px;
+  width: 90%;
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+}
+.options a:hover{
+  cursor: pointer;
+  color: #15869E;
+}
+
+#welcome{
+  height: 200px;
+  text-align: center;
+  animation-duration: 4s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
