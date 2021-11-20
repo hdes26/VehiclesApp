@@ -1,31 +1,35 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from 'react'
 import { getPerson } from '../helpers/getPersons'
 
 
 
-const PersonFetch = (personas)=>{
+const PersonFetch = () => {
 
-    const [person, setperson] = useState({
-        data:[],
-        loading:true
+    const [state, setstate] = useState({
+        data: [],
+        loading: true
     });
+
 
 
     useEffect(() => {
 
-         getPerson()
-            .then(res => 
-                setperson({
+        getPerson()
+            .then(res => {
+
+                setstate({
                     data: res,
-                    loading:false
-
+                    loading: false
                 })
-            )
 
-    }, [personas]);
+            })
+    }, [])
 
 
-    return person;
+
+    return state;
+
+
 
 }
 

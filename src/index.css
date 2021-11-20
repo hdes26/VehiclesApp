@@ -47,10 +47,15 @@ nav a:focus{
   display: flex;
   height: 640px;
   background-color: #55505048;
-  width: 90%;
+  width: 95%;
   border-radius: 8px;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  
+}
+.content p{
+  width: 100%;
+  text-align: center;
 }
 .options{
   margin-top: 30px;
@@ -70,6 +75,31 @@ nav a:focus{
   animation-duration: 4s;
   animation-name: slidein;
 }
+.card-grid{
+  width: 100%;
+  display: flex;
+  height: auto;
+  flex-wrap: wrap;
+  align-self: flex-start;
+ justify-self: flex-start;
+}
+.card-grid div{
+  display: flex;
+  height: 120px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  width: 12%;
+  margin: 27px;
+  font-size: 13px;
+  text-align: center;
+  flex-direction: column;
+
+}
+.card-grid div:hover{
+  border: 1px solid #15869E;
+  cursor: pointer;
+  
+}
 
 @keyframes slidein {
   from {
@@ -82,3 +112,45 @@ nav a:focus{
     width: 100%;
   }
 }
+
+
+@media (max-width:1257px) {
+  .card-grid div {
+    height: 100px;
+    margin: 20px;
+  }
+  }
+@media (max-width:853px) {
+    .card-grid div {
+      height: 100px;
+      margin: 15px;
+      font-size: 10px;
+      text-align: center;
+    }
+    }
+@media (max-width:727px) {
+  .card-grid div {
+    height: 90px;
+    margin: 15px;
+  }
+  
+
+}
+@media (max-width:565px) {
+  .content{
+    height: auto;
+    width: 90%;
+    background-color:transparent;
+  }
+  .card-grid{
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  .card-grid div {
+    height: 200px;
+    margin: 20px;
+    width: 90%;
+  }
+  }
+

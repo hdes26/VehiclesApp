@@ -1,29 +1,37 @@
-import { useState, useEffect } from "react";
-import { getVehicle } from './helpers/getVehicle'
+import { useEffect, useState } from 'react'
+import { getVehicle  } from '../helpers/getVehicles'
 
 
 
-export const PersonFetch = (autos)=>{
+const VehiclesFetch = () => {
 
-    const [vehicles, setvehicles] = useState({
+    const [state, setstate] = useState({
         data: [],
         loading: true
-    })
+    });
+
 
 
     useEffect(() => {
 
         getVehicle()
-        .then(res => {
-            setvehicles({
-                vehicles: res,
-                loading: false
+            .then(res => {
+
+                setstate({
+                    data: res,
+                    loading: false
+                })
+
             })
-        })
-
-    }, [autos]);
+    }, [])
 
 
-    return vehicles;
+
+    return state;
+
+
 
 }
+
+
+export default VehiclesFetch;

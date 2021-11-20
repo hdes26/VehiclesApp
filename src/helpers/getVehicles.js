@@ -4,20 +4,10 @@ export const getVehicle = async () => {
     const res = await fetch(url, {
         method: "GET"
     });
-    const { VehiclesApp } = await res.json();
-    const vehicles = VehiclesApp.map(data => {
-        return {
-            _id:data._id,
-            id: data.id,
-            placa: data.placa,
-            marca: data.marca,
-            modelo: data.modelo,
-            puertas: data.puertas,
-            tipo: data.tipo,
-            person: data.person,
+    const { VehiclesApp } = await res.json()
+    
+     
 
-        }
-    })
-
-    return vehicles;
+    return VehiclesApp;
 }
+
