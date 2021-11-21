@@ -100,6 +100,61 @@ nav a:focus{
   cursor: pointer;
   
 }
+.form{
+  margin-top: 50px;
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  flex-direction: column;
+}
+.form input{
+
+  width: 40%;
+  height: 33px;
+  margin-top: 20px;
+  border-radius: 4px;
+  border-style: none;
+}
+
+#submit{
+  margin-top: 50px;
+  width: 12%;
+  border-radius: 6px;
+  background-color: #15869E;
+  color: white;
+  border-style: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  height: 28px;
+}
+#submit:hover{
+  cursor: pointer;
+}
+#marry{
+  margin-top: 20px;
+  display: flex;
+  height: 10px;
+  width: 20%;
+  flex-direction: row;
+  font-size: 10px;
+  justify-content: center;
+}
+#marry input{
+  margin-top: 0px;
+  margin-left: 0px;
+  height: 13px;
+  width: 20px;
+}
+#marry p{
+  margin-left: 10px;
+}
+#marry p:first-child{
+  margin-left: 0px;
+  margin-right: 20px;
+}
+
 
 @keyframes slidein {
   from {
@@ -151,6 +206,7 @@ nav a:focus{
     height: 200px;
     margin: 20px;
     width: 90%;
+    font-size: 15px;
   }
   }
 
