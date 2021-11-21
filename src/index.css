@@ -170,28 +170,80 @@ nav a:focus{
 
 
 @media (max-width:1257px) {
+  .form{
+    width: 80%;
+  }
+  .form input{
+    width: 60%;
+  }
+  #submit{
+    width: 20%;
+  }
   .card-grid div {
     height: 100px;
     margin: 20px;
   }
   }
 @media (max-width:853px) {
+  .form{
+    width: 100%;
+  }
+  .form input{
+    width: 80%;
+    height: 40px;
+  }
+  #submit{
+    width: 25%;
+    height: 35px;
+  }
     .card-grid div {
       height: 100px;
       margin: 15px;
       font-size: 10px;
       text-align: center;
     }
+    #marry {
+      height: 20px;
+      font-size: 12px;
+      width: 25%;
+    }
+    #marry input{
+      width: 60%;
+      height: 14px;
+      margin-left: 12px;
+    }
     }
 @media (max-width:727px) {
+  .form{
+    width: 100%;
+  }
+  .form input{
+    width: 70%;
+  }
+  #submit{
+    width: 25%;
+  }
   .card-grid div {
     height: 90px;
-    margin: 15px;
+    margin: 0px;
+  }
+  #marry {
+    height: 20px;
+    font-size: 12px;
+    width: 40%;
+  }
+  #marry input{
+    width: 60%;
+    height: 14px;
+    margin-left: 12px;
   }
   
 
 }
 @media (max-width:565px) {
+  .form input{
+    width: 80%;
+  }
   .content{
     height: auto;
     width: 90%;
@@ -208,5 +260,20 @@ nav a:focus{
     width: 90%;
     font-size: 15px;
   }
+  #marry {
+    height: 20px;
+    font-size: 12px;
+    width: 50%;
   }
+  nav{
+    padding: 0px;
+  }
+  }
+
+@media (max-width:417px) {
+
+    .card-grid div {
+      width: 100%;
+    }
+    }
 
