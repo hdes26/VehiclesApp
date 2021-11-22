@@ -168,7 +168,7 @@ nav a:focus{
 .content-vehicle{
   margin-top: 170px;
   width: 90%;
-  height:480px;
+  height:560px;
   background-color: #5550503a;
   align-self: center;
   border-radius: 6px;
@@ -180,9 +180,11 @@ nav a:focus{
   margin-top: 22px;
   margin-left: 20px;
   font-size: 20px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-right: 50px;
 }
 .data div input {
-  margin-left: 20px;
   width: 300px;
   border-radius: 4px;
   height: 38px;
@@ -255,8 +257,15 @@ nav a:focus{
   .form{
     width: 100%;
   }
+  .data div {
+    font-size: 16px;
+  }
+  .data div input{
+    width: 250px;
+font-size: 17px;
+  }
   .form input{
-    width: 80%;
+    width: 60%;
     height: 40px;
   }
   #submit{
@@ -280,7 +289,34 @@ nav a:focus{
       margin-left: 12px;
     }
     }
+
 @media (max-width:727px) {
+  .form{
+    width: 100%;
+  }
+
+  .data div input{
+    width: 240px;
+font-size: 13px;
+  }
+  .content-person{
+    margin-top: 50px;
+    height: 600px;
+    width: 90%;
+  }
+  .content-vehicle{
+    margin-top: 50px;
+    height: 600px;
+    width: 90%;
+  }
+  .data div {
+    display: flex;
+    margin-top: 22px;
+    margin-left: 20px;
+    font-size: 16px;
+    align-items: baseline;
+    justify-content: space-between;
+  }
   .form{
     width: 100%;
   }
@@ -308,6 +344,27 @@ nav a:focus{
 
 }
 @media (max-width:565px) {
+  .data{
+    margin-right: 0px;
+  }
+  .content-person{
+    height: 720px;
+    background-color: transparent;
+  }
+  .content-vehicle{
+    height: 720px;
+  }
+  .data div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .data div:first-child{
+    align-items: flex-start;
+  }
   .form input{
     width: 80%;
   }
