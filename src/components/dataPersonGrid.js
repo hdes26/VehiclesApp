@@ -8,34 +8,37 @@ import { useState } from 'react';
 
 const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, profesion, casado, ingresos, vehiculo }) => {
 
-    const [name, setname] = useState();
-    const [lastname, setlastname] = useState();
-    const [fechanacimiento, setfechanacimiento] = useState();
-    const [identification, setidentification] = useState();
-    const [profession, setprofession] = useState();
+    const [name, setname] = useState(nombres);
+    const [lastname, setlastname] = useState(apellidos);
+    const [fechanacimiento, setfechanacimiento] = useState(nacimiento);
+    const [identification, setidentification] = useState(identificacion);
+    const [profession, setprofession] = useState(profesion);
     const [marry, setmarry] = useState();
-    const [income, setincome] = useState();
-    
+    const [income, setincome] = useState(ingresos);
 
 
 
 
 
-
-    console.log(id);
     const divRoot = document.querySelector('#root');
-    let _casado = '';
-    if (casado) {
-        _casado = "Si";
+
+    //TODO: ARREGLAR EL CASADO SI O NO DE TAL MANERA QUE CUANDO SE TRUE MUESTRE SI Y CUANDO SEA FALSE MUESTRO NO Y SE PUDA HACER PUT CON UN IF TU ME ENTIENDES
+    var casadosiono;
+    if (marry) {
+        casadosiono = "Si";
     } else {
-        _casado = "No";
+        casadosiono = "No";
     }
 
-
+    
     const personGrid = () => {
         ReactDOM.render(<PersonGrid />, divRoot)
     }
     const btnEditar = () => {
+        if (marry) {
+            
+        }
+
         swal({
             title: "Are you sure?",
             text: "Edit person",
@@ -45,11 +48,10 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    DeletePerson(id);
+                    UpdatePerson(id, name, lastname, fechanacimiento, identification, profession, marry, income)
                     swal("Poof! Person  has been update!", {
                         icon: "success",
                     }).then(
-                        UpdatePerson(id, nombres, apellidos, nacimiento, identificacion, profesion, casado, ingresos)
 
                     )
                 } else {
@@ -71,7 +73,10 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
                     swal("Poof! Person  has been deleted!", {
                         icon: "success",
                     }).then(
-                        ReactDOM.render(<PersonGrid />, divRoot)
+                        setTimeout(() => {
+
+                            ReactDOM.render(<PersonGrid />, divRoot)
+                        }, 1000)
                     )
                 } else {
                     swal("Your person is safe!");
@@ -80,26 +85,35 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
     }
 
 
-    const handleTextNombre = ()=>{
+    const handleTextNombre = (event) => {
+        let myname = event.target.value;
+        setname(myname);
+    }
+    const handleTextApellido = (event) => {
+        let myapellido = event.target.value;
+        setlastname(myapellido);
+
+    }
+    const handleTextNacimiento = (event) => {
+        let mynacimiento = event.target.value;
+        setfechanacimiento(mynacimiento);
+    }
+    const handleTextIdentificacion = (event) => {
+        let myidentificacion = event.target.value;
+        setidentification(myidentificacion);
+    }
+    const handleTextprofesion = (event) => {
+        let myprofesion = event.target.value;
+        setprofession(myprofesion);
+    }
+    const handleTextCasado = (event) => {
+        let mycasado = event.target.value;
         
+        setmarry(mycasado);
     }
-    const handleTextApellido = ()=>{
-
-    }
-    const handleTextNacimiento = ()=>{
-
-    }
-    const handleTextIdentificacion = ()=>{
-
-    }
-    const handleTextprofesion = ()=>{
-
-    }
-    const handleTextCasado = ()=>{
-
-    }
-    const handleTextIngresos = ()=>{
-
+    const handleTextIngresos = (event) => {
+        let myingresos = event.target.value;
+        setincome(myingresos);
     }
 
 
@@ -113,37 +127,37 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
                     </div>
                     <div>
                         <p>Nombres : </p>
-                        <input type="text" value={nombres} />
+                        <input type="text" value={name} onChange={handleTextNombre} />
                     </div>
                     <div>
                         <p>Apellidos : </p>
-                        <input type="text" value={apellidos} />
+                        <input type="text" value={lastname} onChange={handleTextApellido} />
                     </div>
                     <div>
                         <p>Fecha de nacimiento : </p>
-                        <input type="date" value={nacimiento} />
+                        <input type="date" value={fechanacimiento} onChange={handleTextNacimiento} />
 
                     </div>
                     <div>
                         <p>Identificacion : </p>
-                        <input type="text" value={identificacion} />
+                        <input type="text" value={identification} onChange={handleTextIdentificacion} />
 
 
                     </div>
                     <div>
                         <p>Profesion u oficio : </p>
-                        <input type="text" value={profesion} />
+                        <input type="text" value={profession} onChange={handleTextprofesion} />
 
 
                     </div>
                     <div>
                         <p>Casado : </p>
-                        <input type="text" value={_casado} />
+                        <input type="text" value={casadosiono} onChange={handleTextCasado} />
 
                     </div>
                     <div>
                         <p>Ingresos mensuales : </p>
-                        <input type="text" value={ingresos} />
+                        <input type="text" value={income} onChange={handleTextIngresos} />
 
                     </div>
                 </div>
