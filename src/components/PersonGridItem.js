@@ -18,19 +18,19 @@ const PersonGridItem = ({ id, nombres, apellidos, fecha_nacimiento, identificaci
   }, [])
   console.log(state.data)
 
-const divRoot = document.querySelector('#root');
-  const personGridItem = ()=>{
+  const divRoot = document.querySelector('#root');
+  const dataPersonGrid = () => {
 
-    ReactDOM.render(<DataPersonGrid id={id} nombres={nombres} apellidos={apellidos} 
-      nacimiento = {fecha_nacimiento} identificacion = {identificacion} 
-      profesion = {profesion_oficio} casado = {casado} ingresos ={ingresos_mensuales}
-       />, divRoot);
+    ReactDOM.render(<DataPersonGrid id={id} nombres={nombres} apellidos={apellidos}
+      nacimiento={fecha_nacimiento} identificacion={identificacion}
+      profesion={profesion_oficio} casado={casado} ingresos={ingresos_mensuales}
+    />, divRoot);
   }
 
-  
+
   return (
     <>
-      <div className="card animate__animated animate__fadeIn" id={`cardperson${id}`} onClick={personGridItem}>
+      <div className="card animate__animated animate__fadeIn" id={`cardperson${id}`} onClick={dataPersonGrid}>
 
         <p> {`${nombres} `} </p>
         <p> {`${apellidos} `}  </p>

@@ -6,7 +6,7 @@ export const DeletePerson = (id)=>{
     fetch(url, {
         method:"DELETE"
     })
-    .then()
+    
 
 
 }

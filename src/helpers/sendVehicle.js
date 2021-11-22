@@ -28,7 +28,9 @@ import { VehicleGrid } from '../components/VehicleGrid';
         swal("Good job!", "You have created a new vehicle!", "success")
         .then((value)=>{
             console.log(value)
-            ReactDOM.render(<VehicleGrid />, divRoot)
+            setTimeout(() => {              
+                ReactDOM.render(<VehicleGrid />, divRoot)
+            }, 1000);
         }
         )
     )

@@ -13,7 +13,7 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
     const [fechanacimiento, setfechanacimiento] = useState(nacimiento);
     const [identification, setidentification] = useState(identificacion);
     const [profession, setprofession] = useState(profesion);
-    const [marry, setmarry] = useState();
+    const [marry, setmarry] = useState(casado);
     const [income, setincome] = useState(ingresos);
 
 
@@ -22,22 +22,14 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
 
     const divRoot = document.querySelector('#root');
 
-    //TODO: ARREGLAR EL CASADO SI O NO DE TAL MANERA QUE CUANDO SE TRUE MUESTRE SI Y CUANDO SEA FALSE MUESTRO NO Y SE PUDA HACER PUT CON UN IF TU ME ENTIENDES
-    var casadosiono;
-    if (marry) {
-        casadosiono = "Si";
-    } else {
-        casadosiono = "No";
-    }
+    
 
     
     const personGrid = () => {
         ReactDOM.render(<PersonGrid />, divRoot)
     }
     const btnEditar = () => {
-        if (marry) {
-            
-        }
+        
 
         swal({
             title: "Are you sure?",
@@ -51,9 +43,7 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
                     UpdatePerson(id, name, lastname, fechanacimiento, identification, profession, marry, income)
                     swal("Poof! Person  has been update!", {
                         icon: "success",
-                    }).then(
-
-                    )
+                    })
                 } else {
                     swal("Your person is safe!");
                 }
@@ -107,8 +97,7 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
         setprofession(myprofesion);
     }
     const handleTextCasado = (event) => {
-        let mycasado = event.target.value;
-        
+        let mycasado = event.target.value;        
         setmarry(mycasado);
     }
     const handleTextIngresos = (event) => {
@@ -152,7 +141,7 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
                     </div>
                     <div>
                         <p>Casado : </p>
-                        <input type="text" value={casadosiono} onChange={handleTextCasado} />
+                        <input type="text" value={marry} onChange={handleTextCasado} />
 
                     </div>
                     <div>

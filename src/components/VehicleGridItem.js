@@ -1,22 +1,30 @@
+import ReactDOM from 'react-dom';
 import React, { useEffect, useState } from 'react'
+import DataVehicleGrid from './dataVehicleGrid'
 
 
-const VehicleGridItem = ({ id, placa, marca, modelo, puertas, tipo, person}) => {
+const VehicleGridItem = ({ id, placa, marca, modelo, puertas, tipo, person }) => {
   const [state, setstate] = useState({
-    data:[]
+    data: []
   })
 
   useEffect(() => {
     setstate({
-      data:person
+      data: person
     })
   }, [])
-    console.log(state.data)
 
+
+  const divRoot = document.querySelector('#root');
+
+  const dataVehicleGrid = () => {
+
+    ReactDOM.render(<DataVehicleGrid id={id} placa={placa} marca={marca} modelo={modelo} puertas={puertas} tipo={tipo} />, divRoot);
+  }
 
   return (
     <>
-      <div className="card animate__animated animate__fadeIn" id={`cardvehicle${id}`}>
+      <div className="card animate__animated animate__fadeIn" id={`cardvehicle${id}`} onClick={dataVehicleGrid}>
 
         <p> {`${placa} `} </p>
         <p> {`${marca} `}  </p>

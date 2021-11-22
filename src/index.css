@@ -160,24 +160,34 @@ nav a:focus{
 .content-person{
   margin-top: 170px;
   width: 70%;
+  height:600px;
+  background-color: #5550503a;
+  align-self: center;
+  border-radius: 6px;
+}
+.content-vehicle{
+  margin-top: 170px;
+  width: 90%;
   height:480px;
   background-color: #5550503a;
   align-self: center;
   border-radius: 6px;
 }
+
 .data div{
   display: flex;
   flex-direction: row;
   margin-top: 22px;
   margin-left: 20px;
-  font-size: 18px;
+  font-size: 20px;
 }
 .data div input {
   margin-left: 20px;
   width: 300px;
   border-radius: 4px;
-  height: 23px;
+  height: 38px;
   border-style: none;
+  font-size: 20px;
 }
 .butons {
   display: flex;
