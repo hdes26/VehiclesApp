@@ -46,7 +46,6 @@ export const VehicleGrid = () => {
                                 modelo={data.modelo}
                                 puertas={data.puertas}
                                 tipo={data.tipo}
-                                person={data.person}
                                 key={data._id}
                             />
                         ))

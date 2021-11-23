@@ -1,11 +1,12 @@
 import VehicleGrid from './VehicleGrid'
 import ReactDOM from 'react-dom';
 import swal from 'sweetalert';
-import { DeleteVehicle } from '../helpers/deleteVehicle'
-import { UpdateVehicle } from '../helpers/updateVehicle'
+import { DeleteVehicle } from '../helpers/deleteVehicle';
+import { UpdateVehicle } from '../helpers/updateVehicle';
+import HistorialVehicle from './historialVehicle'
 import { useState } from 'react';
 
-const DataVehicleGrid = ({id,placa,marca,modelo,puertas,tipo}) => {
+const DataVehicleGrid = ({ id, placa, marca, modelo, puertas, tipo }) => {
 
     const [theplaca, setplaca] = useState(placa);
     const [themarca, setmarca] = useState(marca);
@@ -21,7 +22,7 @@ const DataVehicleGrid = ({id,placa,marca,modelo,puertas,tipo}) => {
 
 
     const btnEditar = () => {
-        
+
 
         swal({
             title: "Are you sure?",
@@ -32,7 +33,7 @@ const DataVehicleGrid = ({id,placa,marca,modelo,puertas,tipo}) => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    UpdateVehicle(id, theplaca, themarca,themodelo,thepuertas,thetipo)
+                    UpdateVehicle(id, theplaca, themarca, themodelo, thepuertas, thetipo)
                     swal("Poof! Vehicle  has been update!", {
                         icon: "success",
                     })
@@ -57,13 +58,25 @@ const DataVehicleGrid = ({id,placa,marca,modelo,puertas,tipo}) => {
                     }).then(
                         setTimeout(() => {
 
-                            ReactDOM.render(<VehicleGrid/>, divRoot)
+                            ReactDOM.render(<VehicleGrid />, divRoot)
                         }, 1000)
                     )
                 } else {
                     swal("Your person is safe!");
                 }
             });
+    }
+    const btnHistorial = () => {
+        ReactDOM.render(<HistorialVehicle
+             id={id}
+            placa={placa}
+            marca={marca}
+            modelo={modelo}
+            puertas={puertas}
+            tipo={tipo}
+            key={id} />,
+             divRoot);
+
     }
 
     const handleTextPlaca = (event) => {
@@ -75,7 +88,7 @@ const DataVehicleGrid = ({id,placa,marca,modelo,puertas,tipo}) => {
         setmarca(mymarca);
     }
     const handleTextModelo = (event) => {
-        let mymodelo = event.target.value;        
+        let mymodelo = event.target.value;
         setmodelo(mymodelo);
     }
     const handleTextPuertas = (event) => {
@@ -98,7 +111,7 @@ const DataVehicleGrid = ({id,placa,marca,modelo,puertas,tipo}) => {
                     <div >
                         <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={vehicleGrid} />
                     </div>
-                        <br/><br/>
+                    <br /><br />
                     <div>
                         <p>Placa : </p>
                         <input type="text" value={theplaca} onChange={handleTextPlaca} />
@@ -129,6 +142,7 @@ const DataVehicleGrid = ({id,placa,marca,modelo,puertas,tipo}) => {
                 <div className="butons">
                     <input type="submit" value="EDITAR" id="btn-editar" onClick={btnEditar} ></input>
                     <input type="submit" value="BORRAR" id="btn-borrar" onClick={btnBorrar} ></input>
+                    <input type="submit" value="HISTORIAL" id="btn-historial" onClick={btnHistorial} ></input>
                 </div>
             </div>
 
