@@ -25,8 +25,8 @@ const Main = () => {
         <>
 
             <nav>
-                <a className="menuperson" onClick={personButton}>Person</a>
-                <a className="menuvehicle" onClick={vehicleButton}>Vehicle</a>
+                <p className="menuperson" onClick={personButton} >Person</p>
+                <p className="menuvehicle" onClick={vehicleButton} >Vehicle</p>
             </nav>
 
 

@@ -89,7 +89,7 @@ const AddPerson = () => {
     } */
 
     const submit = () => {
-        if (nombres, apellidos, fnacimiento, identificacion, profesion, casado, ingresos) {
+        if ((nombres, apellidos, fnacimiento, identificacion, profesion, casado, ingresos)) {
             sendPerson(nombres, apellidos, fnacimiento, identificacion, profesion, casado, ingresos);
         } else {
 

@@ -19,7 +19,7 @@ const HistorialVehicle = ({ id, placa, marca, modelo, puertas, tipo, disponible 
                 })
             })
 
-    }, [])
+    }, [id])
 
     const { hdata: info } = data;
 

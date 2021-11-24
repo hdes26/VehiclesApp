@@ -30,7 +30,7 @@ export const VehicleGrid = () => {
             <Menu />
 
             <div className="options">
-                <a onClick={addVehicle}> Add vehicle </a>
+                <p onClick={addVehicle}> Add vehicle </p>
                 {/* <a onClick={sortBy}> Sort by</a> */}
             </div>
             <div className="content">
@@ -38,7 +38,6 @@ export const VehicleGrid = () => {
                 <div className="card-grid" >
                     {
                         data.map(data => (
-                            console.log(data.disponible),
                             <VehicleGridItem
                                 id={data._id}
                                 placa={data.placa}

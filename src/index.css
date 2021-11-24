@@ -30,15 +30,15 @@ nav{
   justify-content: space-evenly;
   height: 80px;
 }
-nav a{
+nav p{
   cursor: pointer;
   margin-top: 30px;
 }
-nav a:hover{
+nav p:hover{
   color: #15869E;
   font-size: 16px;
 }
-nav a:focus{
+nav p:focus{
   color: #15869E;
 }
 
@@ -64,7 +64,7 @@ nav a:focus{
   font-size: 12px;
   justify-content: space-between;
 }
-.options a:hover{
+.options p:hover{
   cursor: pointer;
   color: #15869E;
 }
@@ -406,7 +406,7 @@ font-size: 13px;
   }
   .content-person{
     margin-top: 50px;
-    height: 700px;
+    height: 720px;
     width: 90%;
     flex-direction: column;
     align-items: center;
@@ -490,9 +490,11 @@ font-size: 13px;
     align-items: center;
     margin-right: 0px;
     margin-left: 0px;
+    margin-top: 5px;
   }
   .data div:first-child{
     align-items: flex-start;
+    margin-top: 0px;
   }
   .form input{
     width: 80%;

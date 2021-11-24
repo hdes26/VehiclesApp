@@ -35,7 +35,7 @@ export const PersonGrid = () => {
             <Menu />
 
             <div className="options">
-                <a className="addperson" onClick={addPerson}> Add person </a>
+                <p className="addperson" onClick={addPerson}> Add person </p>
                 {/* <a className="sortby" onClick={sortBy}> Sort by</a> */}
             </div>
             <div className="content">

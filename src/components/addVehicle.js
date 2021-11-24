@@ -35,7 +35,7 @@ const AddVehicle = () => {
     }
 
     const submit = () => {
-        if (placa,marca,modelo,puertas,tipo) {
+        if ((placa,marca,modelo,puertas,tipo)) {
             sendVehicle(placa,marca,modelo,puertas,tipo);
         } else {
 
