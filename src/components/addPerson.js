@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { sendPerson } from '../helpers/sendPerson';
-import Menu from './Menu'
+import Menu from './Menu';
+import {PersonGrid} from './PersonGrid';
+import ReactDOM from 'react-dom';
+
 const AddPerson = () => {
     const [nombres, setnombres] = useState();
     const [apellidos, setapellidos] = useState();
@@ -9,6 +12,16 @@ const AddPerson = () => {
     const [profesion, setprofesion] = useState();
     const [casado, setcasado] = useState();
     const [ingresos, setingresos] = useState();
+
+    const divRoot = document.querySelector('#root');
+
+
+
+    
+
+    const Back = ()=>{
+        ReactDOM.render(<PersonGrid />, divRoot);
+    }
 
 
 
@@ -79,12 +92,12 @@ const AddPerson = () => {
         if (nombres, apellidos, fnacimiento, identificacion, profesion, casado, ingresos) {
             new Date(fnacimiento);
             console.log(typeof fnacimiento)
-            console.log(nombres,apellidos,fnacimiento,identificacion ,profesion,casado,ingresos);
-            sendPerson(nombres,apellidos,fnacimiento,identificacion ,profesion,casado,ingresos);
+            console.log(nombres, apellidos, fnacimiento, identificacion, profesion, casado, ingresos);
+            sendPerson(nombres, apellidos, fnacimiento, identificacion, profesion, casado, ingresos);
         } else {
 
         }
-        
+
     }
 
 
@@ -93,6 +106,10 @@ const AddPerson = () => {
             <Menu />
 
             <div className="form">
+                <div className="back">
+                    <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} />
+                </div>
+
 
                 <input type="text" placeholder="Nombre" onChange={handleTextNombre} required></input>
                 <input type="text" placeholder="Apellidos" onChange={handleTextApellidos} required></input>

@@ -4,6 +4,7 @@ import swal from 'sweetalert';
 import { DeletePerson } from '../helpers/deletePerson'
 import { UpdatePerson } from '../helpers/updatePerson';
 import { useState } from 'react';
+import { SellVehicle } from '../helpers/sellVehicle';
 
 
 const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, profesion, casado, ingresos, vehiculo }) => {
@@ -25,7 +26,7 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
     
 
     
-    const personGrid = () => {
+    const Back = () => {
         ReactDOM.render(<PersonGrid />, divRoot)
     }
     const btnEditar = () => {
@@ -74,6 +75,18 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
             });
     }
 
+    const btnsellCar = ()=>{
+        if (vehiculo!= null) {
+            SellVehicle(id)
+            .then(
+                swal("Good job!", "Vendido!", "success")
+
+            )
+        }else{
+            swal("Sorry", "Esta persona no tiene vehiculo", "error");
+        }
+    }
+
 
     const handleTextNombre = (event) => {
         let myname = event.target.value;
@@ -112,7 +125,7 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
 
                 <div className="data">
                     <div >
-                        <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={personGrid} />
+                        <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} />
                     </div>
                     <div>
                         <p>Nombres : </p>
@@ -153,6 +166,7 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
                 <div className="butons">
                     <input type="submit" value="EDITAR" id="btn-editar" onClick={btnEditar} ></input>
                     <input type="submit" value="BORRAR" id="btn-borrar" onClick={btnBorrar} ></input>
+                    <input type="submit" value="Send Car" id="btn-borrar" onClick={btnsellCar} ></input>
                 </div>
 
 

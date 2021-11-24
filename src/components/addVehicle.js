@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import Menu from './Menu'
-import sendVehicle from '../helpers/sendVehicle'
+import Menu from './Menu';
+import sendVehicle from '../helpers/sendVehicle';
+import VehicleGrid from './VehicleGrid';
+import ReactDOM from 'react-dom';
 const AddVehicle = () => {
     const [placa, setplaca] = useState();
     const [marca, setmarca] = useState();
@@ -9,6 +11,7 @@ const AddVehicle = () => {
     const [tipo, settipo] = useState();
 
 
+    const divRoot = document.querySelector('#root');
 
     const handleTextPlaca = (event)=>{
         let myplaca= event.target.value;
@@ -38,7 +41,10 @@ const AddVehicle = () => {
 
         }
         
-    } 
+    }
+    const Back = ()=>{
+        ReactDOM.render(<VehicleGrid/>, divRoot);
+    }
 
 
     return (
@@ -46,7 +52,9 @@ const AddVehicle = () => {
             <Menu />
 
             <div className="form">
-                
+            <div className="back">
+                    <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} />
+                </div>
                     <input type="text" placeholder="Placa" onChange={handleTextPlaca}></input>
                     <input type="text" placeholder="Marca" onChange={handleTextMarca}></input>
                     <input type="text" placeholder="Modelo" onChange={handleTextModelo}></input>

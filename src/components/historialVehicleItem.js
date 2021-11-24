@@ -1,8 +1,8 @@
 
 
-const HistorialVehicleItem = () => {
+export const HistorialVehicleItem = ({id,accion,nombres,apellidos,nacimiento,identificacion,profesion,casado,ingresos}) => {
 
-
+        console.log(id,accion,nombres,apellidos,nacimiento,identificacion,profesion,casado,ingresos)
 
 
 
@@ -10,24 +10,22 @@ const HistorialVehicleItem = () => {
     return (
         <>
 
-            <div className="historyitem">
-                <div className="fl">
+            <div className="historyitem" >
+                <div className="fl" id={id}>
                     <div className="titles">
                         <p>Id</p>
                         <p>Nombres</p>
                         <p>Apellidos</p>
                         <p>Profesion</p>
-                        <p>Casado</p>
-                        <p>Ingresos</p>
+                        <p>Accion</p>
 
                     </div>
                     <div className="historydata">
-                        <p>119232343</p>
-                        <p>Hernan</p>
-                        <p>Escorcia</p>
-                        <p>Ingeniero</p>
-                        <p>false</p>
-                        <p>1.000.000</p>
+                        <p>{identificacion}</p>
+                        <p> {nombres} </p>
+                        <p> {apellidos} </p>
+                        <p> {profesion} </p>
+                        <p> {accion} </p>
                     </div>
                 </div>
                 
@@ -40,4 +38,3 @@ const HistorialVehicleItem = () => {
 }
 
 
-export default HistorialVehicleItem;

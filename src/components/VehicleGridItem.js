@@ -3,23 +3,22 @@ import React, { useEffect, useState } from 'react'
 import DataVehicleGrid from './dataVehicleGrid'
 
 
-const VehicleGridItem = ({ id, placa, marca, modelo, puertas, tipo, person }) => {
-  const [state, setstate] = useState({
-    data: []
-  })
+const VehicleGridItem = ({ id, placa, marca, modelo, puertas, tipo, disponible }) => {
+  let mostrardisponible;
+  if (disponible) {
+    mostrardisponible = "Disponible"
+  }else{
+    mostrardisponible = " No disponible"
 
-  useEffect(() => {
-    setstate({
-      data: person
-    })
-  }, [])
+  }
+  
 
 
   const divRoot = document.querySelector('#root');
 
   const dataVehicleGrid = () => {
 
-    ReactDOM.render(<DataVehicleGrid id={id} placa={placa} marca={marca} modelo={modelo} puertas={puertas} tipo={tipo} />, divRoot);
+    ReactDOM.render(<DataVehicleGrid id={id} placa={placa} marca={marca} modelo={modelo} puertas={puertas} tipo={tipo} disponible={disponible} />, divRoot);
   }
 
   return (
@@ -32,6 +31,8 @@ const VehicleGridItem = ({ id, placa, marca, modelo, puertas, tipo, person }) =>
         <p> {`${modelo} `}  </p>
         <br />
         <p> {`${tipo} `}  </p>
+        <br />
+        <p id="dipovehicle"> {`${mostrardisponible } `}  </p>
 
       </div>
     </>

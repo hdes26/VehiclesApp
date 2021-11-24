@@ -24,10 +24,10 @@ export const PersonGrid = () => {
     const addPerson = () => {
         ReactDOM.render(<AddPerson />, divRoot);
     }
-    const sortBy = () => {
+    /* const sortBy = () => {
         alert("Sort by")
 
-    }
+    } */
 
     return (
         <>
@@ -36,7 +36,7 @@ export const PersonGrid = () => {
 
             <div className="options">
                 <a className="addperson" onClick={addPerson}> Add person </a>
-                <a className="sortby" onClick={sortBy}> Sort by</a>
+                {/* <a className="sortby" onClick={sortBy}> Sort by</a> */}
             </div>
             <div className="content">
                 {loading ? <p className="animate__animated animate__flash">Loading...</p> : null}

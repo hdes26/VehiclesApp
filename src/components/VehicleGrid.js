@@ -11,7 +11,6 @@ export const VehicleGrid = () => {
 
     const { data, loading } = VehiclesFetch();
 
-    console.log(data)
 
 
     const divRoot = document.querySelector('#root');
@@ -19,10 +18,10 @@ export const VehicleGrid = () => {
     const addVehicle = () => {
         ReactDOM.render(<AddVehicle/>, divRoot);
     }
-    const sortBy = () => {
+   /*  const sortBy = () => {
         alert("Sort by")
 
-    }
+    } */
 
 
     return (
@@ -32,13 +31,14 @@ export const VehicleGrid = () => {
 
             <div className="options">
                 <a onClick={addVehicle}> Add vehicle </a>
-                <a onClick={sortBy}> Sort by</a>
+                {/* <a onClick={sortBy}> Sort by</a> */}
             </div>
             <div className="content">
                 {loading ? <p className="animate__animated animate__flash">Loading...</p> : null}
                 <div className="card-grid" >
                     {
                         data.map(data => (
+                            console.log(data.disponible),
                             <VehicleGridItem
                                 id={data._id}
                                 placa={data.placa}
@@ -46,6 +46,7 @@ export const VehicleGrid = () => {
                                 modelo={data.modelo}
                                 puertas={data.puertas}
                                 tipo={data.tipo}
+                                disponible={data.disponible}
                                 key={data._id}
                             />
                         ))

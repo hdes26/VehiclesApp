@@ -21,7 +21,8 @@ export const sendPerson = (nombres, apellidos, fecha_nacimiento, identificacion,
             identificacion: identificacion,
             profesion_oficio: profesion,
             casado: casado,
-            ingresos_mensuales: ingresos_mensuales
+            ingresos_mensuales: ingresos_mensuales,
+            vehiculo:null
         })
     })
         .then(

@@ -25,7 +25,7 @@ const PersonFetch = () => {
             })
     }, [])
 
-
+console.log(state.data)
 
     return state;
 

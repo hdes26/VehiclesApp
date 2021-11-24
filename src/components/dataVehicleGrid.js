@@ -5,9 +5,9 @@ import { DeleteVehicle } from '../helpers/deleteVehicle';
 import { UpdateVehicle } from '../helpers/updateVehicle';
 import HistorialVehicle from './historialVehicle'
 import { useState } from 'react';
+import AssignVehicle from './assignVehicle';
 
-const DataVehicleGrid = ({ id, placa, marca, modelo, puertas, tipo }) => {
-
+const DataVehicleGrid = ({ id, placa, marca, modelo, puertas, tipo, disponible }) => {
     const [theplaca, setplaca] = useState(placa);
     const [themarca, setmarca] = useState(marca);
     const [themodelo, setmodelo] = useState(modelo);
@@ -16,7 +16,7 @@ const DataVehicleGrid = ({ id, placa, marca, modelo, puertas, tipo }) => {
 
 
     const divRoot = document.querySelector('#root');
-    const vehicleGrid = () => {
+    const Back = () => {
         ReactDOM.render(<VehicleGrid />, divRoot);
     }
 
@@ -68,15 +68,32 @@ const DataVehicleGrid = ({ id, placa, marca, modelo, puertas, tipo }) => {
     }
     const btnHistorial = () => {
         ReactDOM.render(<HistorialVehicle
-             id={id}
+            id={id}
             placa={placa}
             marca={marca}
             modelo={modelo}
             puertas={puertas}
             tipo={tipo}
+            disponible={disponible}
             key={id} />,
-             divRoot);
+            divRoot);
+    }
+    const btnAsignar = () => {
+        if (disponible) {
 
+            ReactDOM.render(<AssignVehicle
+                id={id}
+                placa={placa}
+                marca={marca}
+                modelo={modelo}
+                puertas={puertas}
+                tipo={tipo}
+                disponible={disponible}
+            />, divRoot)
+        } else {
+            swal("Sorry!", "Este vehiculo ya esta siendo usado!", "error");
+
+        }
     }
 
     const handleTextPlaca = (event) => {
@@ -109,7 +126,7 @@ const DataVehicleGrid = ({ id, placa, marca, modelo, puertas, tipo }) => {
             <div className="content-vehicle">
                 <div className="data">
                     <div >
-                        <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={vehicleGrid} />
+                        <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} />
                     </div>
                     <br /><br />
                     <div>
@@ -140,9 +157,10 @@ const DataVehicleGrid = ({ id, placa, marca, modelo, puertas, tipo }) => {
                 </div>
 
                 <div className="butons">
+                    <input type="submit" value="ASIGNAR" id="btn-asignar" onClick={btnAsignar} ></input>
                     <input type="submit" value="EDITAR" id="btn-editar" onClick={btnEditar} ></input>
-                    <input type="submit" value="BORRAR" id="btn-borrar" onClick={btnBorrar} ></input>
                     <input type="submit" value="HISTORIAL" id="btn-historial" onClick={btnHistorial} ></input>
+                    <input type="submit" value="BORRAR" id="btn-borrar" onClick={btnBorrar} ></input>
                 </div>
             </div>
 
