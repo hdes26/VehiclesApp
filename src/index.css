@@ -253,6 +253,14 @@ nav a:focus{
   align-items: center;
    overflow-y: hidden;
 }
+.date{
+  margin-top: 30px;
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+  align-self: center;
+  font-weight: bold;
+}
 .fl{
   width: 95%;
   display: flex;
@@ -451,6 +459,9 @@ font-size: 13px;
 
 }
 @media (max-width:565px) {
+  .date{
+    margin-top: 0px;
+  }
   .fl{
     height: 275px;
     flex-direction: row;

@@ -1,6 +1,6 @@
 
 
-export const HistorialVehicleItem = ({id,accion,nombres,apellidos,nacimiento,identificacion,profesion,casado,ingresos}) => {
+export const HistorialVehicleItem = ({id,accion,nombres,apellidos,nacimiento,identificacion,profesion,casado,ingresos,date}) => {
 
         console.log(id,accion,nombres,apellidos,nacimiento,identificacion,profesion,casado,ingresos)
 
@@ -26,6 +26,10 @@ export const HistorialVehicleItem = ({id,accion,nombres,apellidos,nacimiento,ide
                         <p> {apellidos} </p>
                         <p> {profesion} </p>
                         <p> {accion} </p>
+                    </div>
+
+                    <div className="date">
+                        {date}
                     </div>
                 </div>
                 

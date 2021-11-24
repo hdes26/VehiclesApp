@@ -56,6 +56,7 @@ const HistorialVehicle = ({ id, placa, marca, modelo, puertas, tipo, disponible 
                             profesion={data.idPerson.profesion_oficio}
                             casado={data.idPerson.casado}
                             ingresos={data.idPerson.ingresos_mensuales}
+                            date={data.date}
                             key={data._id}
 
                         />
