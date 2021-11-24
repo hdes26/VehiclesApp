@@ -125,7 +125,7 @@ const DataPersonGrid = ({ id, nombres, apellidos, nacimiento, identificacion, pr
 
                 <div className="data">
                     <div >
-                        <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} />
+                        <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} alt="imgback" />
                     </div>
                     <div>
                         <p>Nombres : </p>

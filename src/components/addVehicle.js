@@ -53,7 +53,7 @@ const AddVehicle = () => {
 
             <div className="form">
             <div className="back">
-                    <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} />
+                    <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} alt="imgback" />
                 </div>
                     <input type="text" placeholder="Placa" onChange={handleTextPlaca}></input>
                     <input type="text" placeholder="Marca" onChange={handleTextMarca}></input>

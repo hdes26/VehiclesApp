@@ -1,12 +1,10 @@
 import swal from 'sweetalert';
 import { AsignVehicle } from '../helpers/asignVehicle';
-import VehicleGrid from './VehicleGrid';
-import ReactDOM from 'react-dom';
+
 
 
 export const AssignVehicleItem = ({ idvehicle, idperson, nombres, apellidos, identificacion, profesion, ingresos }) => {
 
-    const divRoot = document.querySelector('#root');
 
 
     const confirmarSeleccion = () => {

@@ -126,7 +126,7 @@ const DataVehicleGrid = ({ id, placa, marca, modelo, puertas, tipo, disponible }
             <div className="content-vehicle">
                 <div className="data">
                     <div >
-                        <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} />
+                        <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back}  alt="imgback"/>
                     </div>
                     <br /><br />
                     <div>

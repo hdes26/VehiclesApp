@@ -90,9 +90,6 @@ const AddPerson = () => {
 
     const submit = () => {
         if (nombres, apellidos, fnacimiento, identificacion, profesion, casado, ingresos) {
-            new Date(fnacimiento);
-            console.log(typeof fnacimiento)
-            console.log(nombres, apellidos, fnacimiento, identificacion, profesion, casado, ingresos);
             sendPerson(nombres, apellidos, fnacimiento, identificacion, profesion, casado, ingresos);
         } else {
 
@@ -107,7 +104,7 @@ const AddPerson = () => {
 
             <div className="form">
                 <div className="back">
-                    <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} />
+                    <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} alt="imgback" />
                 </div>
 
 

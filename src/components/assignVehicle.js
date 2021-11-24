@@ -40,7 +40,7 @@ const AssignVehicle = ({ id, placa, marca, modelo, puertas, tipo,disponible }) =
         <>
             <div className="content-historialvehicle">
                 <div >
-                    <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} />
+                    <img src="https://img.icons8.com/color/25/000000/back--v1.png" id="btn-back" onClick={Back} alt="imgback" />
                 </div>
                 <h3 id="historialtitle">Asignar vehiculo</h3>
                 {
