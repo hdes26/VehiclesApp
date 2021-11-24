@@ -11,3 +11,5 @@ ReactDOM.render(<Main/>, divRoot );
 
 serviceWorkerRegistration.register();
 
+reportWebVitals();
+
