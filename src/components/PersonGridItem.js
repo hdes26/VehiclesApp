@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import DataPersonGrid from './dataPersonGrid';
 import ReactDOM from 'react-dom';
 
@@ -14,15 +14,7 @@ const PersonGridItem = ({ id, nombres, apellidos, fecha_nacimiento, identificaci
 
   }
 
-  const [state, setstate] = useState({
-    data: []
-  })
 
-  useEffect(() => {
-    setstate({
-      data: vehiculo
-    })
-  }, [])
 
   const divRoot = document.querySelector('#root');
   const dataPersonGrid = () => {
