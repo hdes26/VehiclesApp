@@ -1,6 +1,6 @@
 
 export const getPerson = async () => {
-    const url = 'http://localhost:2000/api/person/';
+    const url = 'https://vehicles-app.herokuapp.com/api/person/';
     const res = await fetch(url, {
         method: "GET"
     });

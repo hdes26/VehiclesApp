@@ -1,7 +1,7 @@
 
 
 export const historial = async (id) => {
-    const url = `http://localhost:2000/api/history/${id}`;
+    const url = `https://vehicles-app.herokuapp.com/api/history/${id}`;
     const res = await fetch(url, {
         method:'GET'
     });

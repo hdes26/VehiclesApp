@@ -10,7 +10,7 @@ import { VehicleGrid } from '../components/VehicleGrid';
     const Id = genId()
 
 
-    const url = 'http://localhost:2000/api/vehicles/create';
+    const url = 'https://vehicles-app.herokuapp.com/api/vehicles/create';
     fetch(url, {
         method: "POST",
         headers: { "Content-type": "application/json" },

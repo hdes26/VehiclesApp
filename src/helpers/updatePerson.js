@@ -3,7 +3,7 @@
 export const UpdatePerson = (id,nombres,apellidos,nacimiento,identificacion,profesion,casado,ingresos)=>{
     console.log(id,nombres,apellidos,nacimiento,identificacion,profesion,casado,ingresos);
 
-    const url = `http://localhost:2000/api/person/update/${id}`;
+    const url = `https://vehicles-app.herokuapp.com/api/person/update/${id}`;
     fetch(url, {
         method:"PUT",
         headers:{

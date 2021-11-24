@@ -1,6 +1,6 @@
 
 export const getVehicle = async () => {
-    const url = 'http://localhost:2000/api/vehicles/';
+    const url = 'https://vehicles-app.herokuapp.com/vehicles/';
     const res = await fetch(url, {
         method: "GET"
     });

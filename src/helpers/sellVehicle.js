@@ -2,7 +2,7 @@
 
 export const SellVehicle = async(id)=>{
 
-    const url = 'http://localhost:2000/api/vehicles/desvincular/';
+    const url = 'https://vehicles-app.herokuapp.com/api/vehicles/desvincular/';
     const res = await fetch(url, {
         method:"POST",
         headers:{

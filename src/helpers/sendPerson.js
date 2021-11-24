@@ -9,7 +9,7 @@ export const sendPerson = (nombres, apellidos, fecha_nacimiento, identificacion,
     const Id = genId()
 
 
-    const url = 'http://localhost:2000/api/person/create/';
+    const url = 'https://vehicles-app.herokuapp.com/api/person/create/';
     fetch(url, {
         method: "POST",
         headers: { "Content-type": "application/json" },

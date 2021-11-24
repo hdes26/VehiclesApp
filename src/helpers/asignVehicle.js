@@ -3,7 +3,7 @@
 export const AsignVehicle = async(idperson,idvehicle)=>{
     console.log(idperson,idvehicle);
 
-    const url = 'http://localhost:2000/api/vehicles/assign/';
+    const url = 'https://vehicles-app.herokuapp.com/api/vehicles/assign/';
     const res = await fetch(url, {
         method:"POST",
         headers:{

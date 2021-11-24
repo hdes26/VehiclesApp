@@ -2,7 +2,7 @@
 
 export const UpdateVehicle = (id,placa,marca,modelo,puertas,tipo)=>{
 
-    const url = `http://localhost:2000/api/vehicles/update/${id}`;
+    const url = `https://vehicles-app.herokuapp.com/api/vehicles/update/${id}`;
     fetch(url, {
         method:"PUT",
         headers:{
